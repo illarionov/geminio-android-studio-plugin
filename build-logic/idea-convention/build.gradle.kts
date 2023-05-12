@@ -11,6 +11,7 @@ dependencies {
     implementation("ru.hh.plugins.build_logic:kotlin-convention")
 
     implementation(Libs.gradleIntelliJPlugin)
+    implementation(Libs.gradleIntelliJPluginUploader)
     implementation(Libs.gradleChangelogPlugin)
     implementation(Libs.kotlinPlugin)
 }

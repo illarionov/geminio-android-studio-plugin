@@ -127,7 +127,9 @@ class ExecuteGeminioModuleTemplateAction(
                             )
                         }
 
-                        modifySettingGradle(recipeExecutorModel)
+                        if (chooseAppsStep.modifyRootSettingsFile) {
+                            modifySettingGradle(recipeExecutorModel)
+                        }
                         modifyBuildGradle(recipeExecutorModel)
                     }
 

@@ -1,5 +1,8 @@
+import dev.bmac.gradle.intellij.UploadPluginTask
+
 plugins {
     id("convention.idea-plugin")
+    id("convention.idea-plugin.publish")
 }
 
 // TODO [build-logic] Look with a fresh eye, why this needs to be duplicated, if there is common dependency resolution in settings.gradle
@@ -34,3 +37,10 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation(Libs.flexmark) // Markdown parser
 }
+
+tasks.named<UploadPluginTask>("uploadPlugin") {
+    // keep in sync with resources/META-INF/plugin.xml
+    pluginId = "ru.hh.plugins.Geminio"
+    pluginName = "Geminio"
+}
+

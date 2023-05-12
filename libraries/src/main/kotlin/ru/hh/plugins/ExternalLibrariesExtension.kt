@@ -17,25 +17,27 @@ abstract class ExternalLibrariesExtension @Inject constructor(private val provid
             .filter(String::isNotEmpty)
     )
 
+    private val gradleUploaderVersion = systemProperty("gradleIntellijPluginUploader").get()
     private val gradleIntellijPluginVersion = systemProperty("gradleIntellijPluginVersion").get()
     private val gradleChangelogPluginVersion = systemProperty("gradleChangelogPluginVersion").get()
     private val kotlinVersion = systemProperty("kotlinVersion").get()
     private val detektVersion = systemProperty("detektVersion").get()
 
     val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    val gradleIntelliJPluginUploader = "dev.bmac.intellij.plugins:intellij_plugin_uploader:$gradleUploaderVersion"
     val gradleIntelliJPlugin = "org.jetbrains.intellij.plugins:gradle-intellij-plugin:$gradleIntellijPluginVersion"
     val gradleChangelogPlugin = "org.jetbrains.intellij.plugins:gradle-changelog-plugin:$gradleChangelogPluginVersion"
 
-    val kotlinXCli = "org.jetbrains.kotlinx:kotlinx-cli:0.2.1"
+    val kotlinXCli = "org.jetbrains.kotlinx:kotlinx-cli:0.3.6"
     val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     val kotlinStdlibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     val kotlinStdlibJdk8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-    val kotlinHtml = "org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2"
+    val kotlinHtml = "org.jetbrains.kotlinx:kotlinx-html-jvm:0.11.0"
     val kotlinCompilerEmbeddable = "org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion"
 
-    val freemarker = "org.freemarker:freemarker:2.3.30"
-    val flexmark = "com.vladsch.flexmark:flexmark-all:0.50.42"
+    val freemarker = "org.freemarker:freemarker:2.3.32"
+    val flexmark = "com.vladsch.flexmark:flexmark-all:0.64.8"
 
     val staticAnalysis = StaticAnalysisLibraries(
         detektVersion = detektVersion
@@ -43,7 +45,7 @@ abstract class ExternalLibrariesExtension @Inject constructor(private val provid
     val tests = UnitTests
 
     object UnitTests {
-        const val kotest = "io.kotest:kotest-runner-junit5-jvm:4.3.1"
+        const val kotest = "io.kotest:kotest-runner-junit5-jvm:5.8.1"
     }
 
     class StaticAnalysisLibraries(

@@ -51,6 +51,7 @@ class BuildGradleModificationService(
         }
     }
 
+    @Suppress("LabeledExpression")
     fun addDepsInModuleDirectory(
         rootDir: PsiDirectory?,
         gradleDependencies: List<BuildGradleDependency>,
@@ -72,6 +73,7 @@ class BuildGradleModificationService(
         }
     }
 
+    @Suppress("LabeledExpression")
     fun addGradlePluginsInModuleDirectory(
         rootDir: PsiDirectory?,
         pluginsIds: List<String>,
