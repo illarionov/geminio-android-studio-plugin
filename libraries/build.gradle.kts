@@ -6,7 +6,7 @@ group = "ru.hh.plugins.build_logic"
 
 kotlin {
     @Suppress("MagicNumber")
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 dependencies {

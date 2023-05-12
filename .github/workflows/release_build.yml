@@ -7,8 +7,8 @@ on:
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2022.2.1.19/android-studio-2022.2.1.19-linux.tar.gz
-  COMPILER_VERSION: 222.4459.24
+  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.1.1.3/android-studio-2023.1.1.3-linux.tar.gz
+  COMPILER_VERSION: 231.7864.76
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
           ./gradlew buildAllPlugins \
             -DandroidStudioPath="$(pwd)/android-studio" \
             -DandroidStudioCompilerVersion="$COMPILER_VERSION" \
-            -DandroidStudioPluginsNames="android,Kotlin,java,Groovy,git4idea,IntelliLang"
+            -DandroidStudioPluginsNames="android,Kotlin,java,Groovy,Git4Idea,org.intellij.intelliLang"
       - name: Publish plugins
         uses: softprops/action-gh-release@v1
         env:
