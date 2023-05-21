@@ -6,12 +6,12 @@ import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.psi.PsiElement
 import com.intellij.psi.xml.XmlFile
 import com.intellij.ui.RecentsManager
+import com.intellij.ui.dsl.builder.Align
 import com.intellij.ui.dsl.builder.COLUMNS_LARGE
 import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.bindText
 import com.intellij.ui.dsl.builder.columns
 import com.intellij.ui.dsl.builder.panel
-import com.intellij.ui.dsl.gridLayout.HorizontalAlign
 import org.jetbrains.kotlin.asJava.classes.KtLightClassForSourceDeclaration
 import org.jetbrains.kotlin.idea.refactoring.fqName.getKotlinFqName
 import org.jetbrains.kotlin.psi.KtClass
@@ -90,7 +90,7 @@ class CreateRecyclerItemPageObjectDialog(
                     cell(targetClassChooser)
                         .comment("Choose target &lt;Screen&gt; Page Object class")
                         .resizableColumn()
-                        .horizontalAlign(HorizontalAlign.FILL)
+                        .align(Align.FILL)
                 }
             }
             row {

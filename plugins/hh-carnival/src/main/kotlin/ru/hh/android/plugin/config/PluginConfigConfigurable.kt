@@ -5,6 +5,7 @@ import com.intellij.openapi.options.BoundSearchableConfigurable
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.DialogPanel
 import com.intellij.ui.EnumComboBoxModel
+import com.intellij.ui.dsl.builder.Align
 import com.intellij.ui.dsl.builder.COLUMNS_LARGE
 import com.intellij.ui.dsl.builder.LabelPosition
 import com.intellij.ui.dsl.builder.bindItem
@@ -14,11 +15,9 @@ import com.intellij.ui.dsl.builder.columns
 import com.intellij.ui.dsl.builder.panel
 import com.intellij.ui.dsl.builder.toMutableProperty
 import com.intellij.ui.dsl.builder.toNullableProperty
-import com.intellij.ui.dsl.gridLayout.HorizontalAlign
 import ru.hh.android.plugin.config.CarnivalSettingsFormState.ClearableCharArray
 import ru.hh.android.plugin.core.model.jira.JiraDevelopmentTeam
 import ru.hh.plugins.extensions.layout.listCellRenderer
-import ru.hh.plugins.extensions.layout.passwordFieldCompat
 import ru.hh.plugins.logger.HHLogger
 
 /**
@@ -64,7 +63,7 @@ class PluginConfigConfigurable(
                     textField()
                         .bindText(formState::pluginFolderDirPath)
                         .resizableColumn()
-                        .horizontalAlign(HorizontalAlign.FILL)
+                        .align(Align.FILL)
                 }
             }
             groupRowsRange("Debug Settings") {
@@ -90,7 +89,7 @@ class PluginConfigConfigurable(
                         .widthGroup(JIRA_CREDENTIALS_UI_GROUP)
                 }
                 row("Password:") {
-                    passwordFieldCompat()
+                    passwordField()
                         .bind(
                             { field -> ClearableCharArray(*field.password) },
                             { field, value -> field.text = value.toString() },
