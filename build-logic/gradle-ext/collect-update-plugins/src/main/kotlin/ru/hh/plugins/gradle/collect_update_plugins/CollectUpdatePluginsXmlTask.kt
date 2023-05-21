@@ -2,7 +2,7 @@ package ru.hh.plugins.gradle.collect_update_plugins
 
 import groovy.util.Node
 import groovy.util.NodeList
-import groovy.util.XmlParser
+import groovy.xml.XmlParser
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.file.RegularFileProperty
