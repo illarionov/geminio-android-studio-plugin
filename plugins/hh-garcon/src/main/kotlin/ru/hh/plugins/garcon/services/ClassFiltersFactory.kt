@@ -18,7 +18,7 @@ class ClassFiltersFactory {
 
     fun createKakaoScreensClassFilter(): ClassFilter {
         return ClassFilter { aClass ->
-            return@ClassFilter if (aClass is KtLightClassForSourceDeclaration) {
+            if (aClass is KtLightClassForSourceDeclaration) {
                 when (val classOrObject = aClass.kotlinOrigin) {
                     is KtClass -> (classOrObject.isInner() || classOrObject.isAnnotation()).not() &&
                         InheritanceUtil.isInheritor(aClass, GarconConstants.AGODA_SCREEN_CLASS_FQN)

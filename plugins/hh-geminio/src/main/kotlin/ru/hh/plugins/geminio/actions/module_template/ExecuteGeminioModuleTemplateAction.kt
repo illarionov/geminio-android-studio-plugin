@@ -117,7 +117,6 @@ class ExecuteGeminioModuleTemplateAction(
 
                 try {
                     project.executeWriteCommand(COMMAND_RECIPE_EXECUTION) {
-
                         with(recipeExecutorModel) {
                             geminioTemplateData.androidStudioTemplate.recipe.invoke(
                                 recipeExecutor,

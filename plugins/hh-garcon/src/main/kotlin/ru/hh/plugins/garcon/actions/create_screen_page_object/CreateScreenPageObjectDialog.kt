@@ -8,13 +8,13 @@ import com.intellij.psi.xml.XmlFile
 import com.intellij.refactoring.MoveDestination
 import com.intellij.refactoring.PackageWrapper
 import com.intellij.refactoring.ui.PackageNameReferenceEditorCombo
+import com.intellij.ui.dsl.builder.Align
 import com.intellij.ui.dsl.builder.BottomGap
 import com.intellij.ui.dsl.builder.COLUMNS_LARGE
 import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.bindText
 import com.intellij.ui.dsl.builder.columns
 import com.intellij.ui.dsl.builder.panel
-import com.intellij.ui.dsl.gridLayout.HorizontalAlign
 import org.jetbrains.kotlin.idea.refactoring.ui.KotlinDestinationFolderComboBox
 import ru.hh.plugins.extensions.isQualifiedPackageName
 import ru.hh.plugins.extensions.isValidIdentifier
@@ -73,7 +73,7 @@ class CreateScreenPageObjectDialog(
                     )
                     cell(packageNameChooserComboBox)
                         .resizableColumn()
-                        .horizontalAlign(HorizontalAlign.FILL)
+                        .align(Align.FILL)
                 }.bottomGap(BottomGap.MEDIUM)
 
                 row {
@@ -86,7 +86,7 @@ class CreateScreenPageObjectDialog(
                     )
                     cell(destinationFolderComboBox)
                         .resizableColumn()
-                        .horizontalAlign(HorizontalAlign.FILL)
+                        .align(Align.FILL)
                 }
             }
             row {

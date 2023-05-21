@@ -28,6 +28,6 @@ tasks.withType<KotlinCompile>().configureEach {
         jvmTarget = Libs.javaVersion.toString()
 
         allWarningsAsErrors = false
-        freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.RequiresOptIn -Xjvm-default"
+        freeCompilerArgs = freeCompilerArgs + "-Xjvm-default=all"
     }
 }
