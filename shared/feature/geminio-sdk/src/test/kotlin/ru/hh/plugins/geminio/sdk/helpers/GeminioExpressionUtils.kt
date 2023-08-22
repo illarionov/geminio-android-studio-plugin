@@ -1,5 +1,6 @@
 package ru.hh.plugins.geminio.sdk.helpers
 
+import com.android.ide.common.repository.AgpVersion
 import com.android.tools.idea.wizard.template.ApiTemplateData
 import com.android.tools.idea.wizard.template.ApiVersion
 import com.android.tools.idea.wizard.template.Category
@@ -50,7 +51,7 @@ internal object GeminioExpressionUtils {
         return ModuleTemplateData(
             projectTemplateData = ProjectTemplateData(
                 androidXSupport = true,
-                gradlePluginVersion = "6.3",
+                agpVersion = AgpVersion(8, 0),
                 sdkDir = File("/AndroidSdk"),
                 language = Language.Kotlin,
                 kotlinVersion = "1.4.10",
