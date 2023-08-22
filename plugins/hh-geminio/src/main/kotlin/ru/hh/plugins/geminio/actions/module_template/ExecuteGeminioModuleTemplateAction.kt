@@ -88,7 +88,6 @@ class ExecuteGeminioModuleTemplateAction(
             renderTemplateModel = stepModel.renderTemplateModel,
             stepTitle = "Choose app-modules",
             project = project,
-            isForAppModules = true
         )
 
         val wizard = ModelWizard.Builder()
