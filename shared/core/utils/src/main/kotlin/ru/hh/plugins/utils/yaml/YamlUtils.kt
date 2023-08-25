@@ -1,5 +1,6 @@
 package ru.hh.plugins.utils.yaml
 
+import org.yaml.snakeyaml.LoaderOptions
 import org.yaml.snakeyaml.Yaml
 import org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor
 import java.io.File
@@ -14,10 +15,10 @@ object YamlUtils {
             val yaml = Yaml(
                 CustomClassLoaderConstructor(
                     T::class.java,
-                    T::class.java.classLoader
+                    T::class.java.classLoader,
+                    LoaderOptions()
                 )
             )
-
             yaml.load<T>(FileReader(configFile))
         } catch (ex: Exception) {
             onError.invoke(ex)
