@@ -1,5 +1,6 @@
 package ru.hh.plugins.geminio.services.templates
 
+import com.android.ide.common.repository.AgpVersion
 import com.android.tools.idea.npw.template.ModuleTemplateDataBuilder
 import com.android.tools.idea.npw.template.ProjectTemplateDataBuilder
 import com.android.tools.idea.templates.recipe.DefaultRecipeExecutor
@@ -76,6 +77,7 @@ class GeminioRecipeExecutorFactoryService(
             .also { builder ->
                 builder.applicationPackage = packageName
                 builder.language = Language.Kotlin
+                builder.agpVersion = AgpVersion(8, 2, 0)
                 builder.setProjectDefaults(project)
             }
 
