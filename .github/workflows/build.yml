@@ -3,7 +3,7 @@ on: [pull_request, workflow_call]
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.5/android-studio-2023.2.1.5-linux.tar.gz
+  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.7/android-studio-2023.2.1.7-linux.tar.gz
   COMPILER_VERSION: 232.9921.47
 
 jobs:
