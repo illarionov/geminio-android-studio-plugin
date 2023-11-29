@@ -18,8 +18,8 @@ on:
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: ${{ inputs.android_studio_url || 'https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.7/android-studio-2023.2.1.7-linux.tar.gz' }}
-  COMPILER_VERSION: ${{ inputs.compiler_version || '232.9921.47' }}
+  ANDROID_STUDIO_URL: ${{ inputs.android_studio_url || 'https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.15/android-studio-2023.2.1.15-linux.tar.gz' }}
+  COMPILER_VERSION: ${{ inputs.compiler_version || '232.10227.8' }}
   PLUGIN_NAMES: ${{ inputs.android_studio_plugin_names || 'android,Kotlin,java,Groovy,Git4Idea,org.intellij.intelliLang' }}
   GRADLE_OPTS: >-
     -Dorg.gradle.jvmargs="-Xmx2G -XX:MaxMetaspaceSize=1G -XX:+UseParallelGC -XX:NewRatio=1 -XX:SoftRefLRUPolicyMSPerMB=10"
