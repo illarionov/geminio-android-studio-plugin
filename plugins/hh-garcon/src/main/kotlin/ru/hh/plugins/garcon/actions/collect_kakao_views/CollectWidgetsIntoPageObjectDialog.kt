@@ -81,7 +81,8 @@ class CollectWidgetsIntoPageObjectDialog(
             super.doOKAction()
             targetClass?.let { aClass ->
                 RecentsManager.getInstance(project).registerRecentEntry(
-                    GarconConstants.RecentsKeys.TARGET_SCREEN_CLASS, aClass.kotlinFqName.toString()
+                    GarconConstants.RecentsKeys.TARGET_SCREEN_CLASS,
+                    aClass.kotlinFqName.toString()
                 )
             }
             PropertiesComponent.getInstance()

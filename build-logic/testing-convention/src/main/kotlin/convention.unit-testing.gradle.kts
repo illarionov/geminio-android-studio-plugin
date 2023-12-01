@@ -25,7 +25,7 @@ tasks.withType<Test>().configureEach {
     }
 }
 
-plugins.withType<KotlinBasePluginWrapper>() {
+plugins.withType<KotlinBasePluginWrapper> {
     dependencies {
         add("testImplementation", Libs.tests.kotest)
     }
