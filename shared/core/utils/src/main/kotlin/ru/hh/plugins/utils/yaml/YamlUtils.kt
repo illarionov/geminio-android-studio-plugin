@@ -16,7 +16,7 @@ object YamlUtils {
                 CustomClassLoaderConstructor(
                     T::class.java,
                     T::class.java.classLoader,
-                    LoaderOptions()
+                    LoaderOptions(),
                 )
             )
             yaml.load<T>(FileReader(configFile))
