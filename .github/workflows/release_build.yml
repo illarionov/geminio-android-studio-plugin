@@ -7,8 +7,8 @@ on:
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.3.1.1/android-studio-2023.3.1.1-linux.tar.gz
-  COMPILER_VERSION: 233.13135.103
+  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.3.2.1/android-studio-2023.3.2.1-linux.tar.gz
+  COMPILER_VERSION: 233.14475.28
 
 jobs:
   build:
