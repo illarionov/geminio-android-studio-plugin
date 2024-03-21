@@ -88,6 +88,7 @@ internal object GeminioExpressionUtils {
             ),
             viewBindingSupport = ViewBindingSupport.NOT_SUPPORTED,
             category = Category.Other,
+            isCompose = true,
             isMaterial3 = false,
             useGenericLocalTests = true,
             useGenericInstrumentedTests = true,
