@@ -31,7 +31,7 @@ abstract class ExternalLibrariesExtension @Inject constructor(private val provid
     val kotlinStdlibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     val kotlinStdlibJdk8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-    val kotlinHtml = "org.jetbrains.kotlinx:kotlinx-html-jvm:0.9.1"
+    val kotlinHtml = "org.jetbrains.kotlinx:kotlinx-html-jvm:0.11.0"
     val kotlinCompilerEmbeddable = "org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion"
 
     val freemarker = "org.freemarker:freemarker:2.3.32"
@@ -43,7 +43,7 @@ abstract class ExternalLibrariesExtension @Inject constructor(private val provid
     val tests = UnitTests
 
     object UnitTests {
-        const val kotest = "io.kotest:kotest-runner-junit5-jvm:5.8.0"
+        const val kotest = "io.kotest:kotest-runner-junit5-jvm:5.8.1"
     }
 
     class StaticAnalysisLibraries(
