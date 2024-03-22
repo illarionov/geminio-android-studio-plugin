@@ -5,7 +5,7 @@
 
 ### Установка
 
-Собранные релизы плагинов можно скачать с релизов на Github: [Releases](https://github.com/illarionov/geminio-android-studio-plugin/releases).
+Собранные плагины можно скачать с релизов на Github: [Releases](https://github.com/illarionov/geminio-android-studio-plugin/releases).
 
 Для плагина hh-geminio также создан свой репозиторий c плагинами.  
 Откройте в AS Plugins -> Manage Plugin Repositories, добавьте адрес https://plugins.pixnews.ru, перейдите 
