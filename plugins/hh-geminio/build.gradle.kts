@@ -1,5 +1,6 @@
 plugins {
     id("convention.idea-plugin")
+    id("convention.idea-plugin.publish")
 }
 
 // TODO [build-logic] Look with a fresh eye, why this needs to be duplicated, if there is common dependency resolution in settings.gradle

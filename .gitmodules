@@ -1,0 +1,4 @@
+[submodule "vendor/plugin_uploader"]
+	path = vendor/plugin_uploader
+	url = https://github.com/illarionov/plugin_uploader.git
+	branch = updateGradle
