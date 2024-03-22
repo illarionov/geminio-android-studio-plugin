@@ -17,12 +17,14 @@ abstract class ExternalLibrariesExtension @Inject constructor(private val provid
             .filter(String::isNotEmpty)
     )
 
+    private val gradleUploaderVersion = systemProperty("gradleIntellijPluginUploader").get()
     private val gradleIntellijPluginVersion = systemProperty("gradleIntellijPluginVersion").get()
     private val gradleChangelogPluginVersion = systemProperty("gradleChangelogPluginVersion").get()
     private val kotlinVersion = systemProperty("kotlinVersion").get()
     private val detektVersion = systemProperty("detektVersion").get()
 
     val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    val gradleIntelliJPluginUploader = "dev.bmac.intellij.plugins:intellij_plugin_uploader:$gradleUploaderVersion"
     val gradleIntelliJPlugin = "org.jetbrains.intellij.plugins:gradle-intellij-plugin:$gradleIntellijPluginVersion"
     val gradleChangelogPlugin = "org.jetbrains.intellij.plugins:gradle-changelog-plugin:$gradleChangelogPluginVersion"
 
