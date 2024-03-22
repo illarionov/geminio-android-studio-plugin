@@ -1,4 +1,4 @@
-name: Publish plugins artifacts on main
+name: Publish Geminio to plugins.pixnews.ru
 
 on:
   workflow_dispatch:
