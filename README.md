@@ -9,7 +9,7 @@
 
 Для плагина hh-geminio также создан свой репозиторий c плагинами.  
 Откройте в AS Plugins -> Manage Plugin Repositories, добавьте адрес https://plugins.pixnews.ru, перейдите 
-в Marketplace и там плагин можно будет найти и установить по имени "hh-geminio".
+в Marketplace и там плагин можно будет найти и установить по имени "Geminio".
 
 ### Основные изменения
 

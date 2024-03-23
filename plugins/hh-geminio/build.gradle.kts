@@ -1,3 +1,5 @@
+import dev.bmac.gradle.intellij.UploadPluginTask
+
 plugins {
     id("convention.idea-plugin")
     id("convention.idea-plugin.publish")
@@ -34,4 +36,10 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
     implementation(Libs.flexmark) // Markdown parser
+}
+
+tasks.named<UploadPluginTask>("uploadPlugin") {
+    // keep in sync with resources/META-INF/plugin.xml
+    pluginId = "ru.hh.plugins.Geminio"
+    pluginName = "Geminio"
 }
