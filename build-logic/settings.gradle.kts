@@ -1,7 +1,6 @@
 rootProject.name = "build-logic"
 
 includeBuild("../libraries")
-includeBuild("../vendor/plugin_uploader")
 
 include("kotlin-convention")
 include("testing-convention")
