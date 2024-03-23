@@ -18,7 +18,7 @@ on:
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: ${{ inputs.android_studio_url || 'https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.3.2.1/android-studio-2023.3.2.1-linux.tar.gz' }}
+  ANDROID_STUDIO_URL: ${{ inputs.android_studio_url || 'https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.3.2.2/android-studio-2023.3.2.2-linux.tar.gz' }}
   COMPILER_VERSION: ${{ inputs.compiler_version || '233.14475.28' }}
   PLUGIN_NAMES: ${{ inputs.android_studio_plugin_names || 'android,Kotlin,java,Groovy,Git4Idea,org.intellij.intelliLang' }}
   GRADLE_OPTS: >-
