@@ -50,14 +50,14 @@ jobs:
             -DandroidStudioCompilerVersion="$COMPILER_VERSION" \
             -DandroidStudioPluginsNames="$PLUGIN_NAMES"
       - name: Publish plugins
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: |
-            build/plugins/hh-carnival.zip
-            build/plugins/hh-garcon.zip
-            build/plugins/hh-geminio.zip
+            build/plugins/hh-carnival-*.zip
+            build/plugins/hh-garcon-*.zip
+            build/plugins/hh-geminio-*.zip
           tag_name: build-${{ github.run_number }}
           name: Build №${{ github.run_number }}
           draft: false
