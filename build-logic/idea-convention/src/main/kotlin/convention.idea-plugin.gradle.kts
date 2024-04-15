@@ -53,10 +53,6 @@ tasks.withType<PatchPluginXmlTask> {
     )
 }
 
-tasks.getByName<Zip>("buildPlugin") {
-    archiveFileName.set("${properties("pluginName")}.zip")
-}
-
 tasks.getByName<RunIdeTask>("runIde") {
     maxHeapSize = "8g"
     minHeapSize = "4g"
