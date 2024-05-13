@@ -5,8 +5,8 @@ on:
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.1.1.3/android-studio-2024.1.1.3-linux.tar.gz
-  COMPILER_VERSION: 241.14494.240
+  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.1.1.7/android-studio-2024.1.1.7-linux.tar.gz
+  COMPILER_VERSION: 241.15989.150
   GRADLE_OPTS: >-
     -Dorg.gradle.jvmargs="-Xmx2G -XX:MaxMetaspaceSize=1G -XX:+UseParallelGC -XX:NewRatio=1 -XX:SoftRefLRUPolicyMSPerMB=10"
     -Dorg.gradle.vfs.watch=false
