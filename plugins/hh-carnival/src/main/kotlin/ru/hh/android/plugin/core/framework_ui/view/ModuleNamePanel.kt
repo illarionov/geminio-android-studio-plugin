@@ -17,8 +17,6 @@ import ru.hh.android.plugin.PluginConstants
 import ru.hh.android.plugin.core.framework_ui.UiConstants
 import ru.hh.android.plugin.extensions.isCorrectPackageName
 import ru.hh.android.plugin.extensions.toPackageNameFromModuleName
-import ru.hh.plugins.extensions.layout.enabledIfCompat
-import ru.hh.plugins.extensions.layout.visibleIfCompat
 import java.awt.Color
 import javax.swing.AbstractButton
 import javax.swing.BorderFactory
@@ -82,7 +80,7 @@ class ModuleNamePanel(
         }
         row {
             label("Invalid target package name specified")
-                .visibleIfCompat(isPackageNameFieldHasErrorProperty)
+                .visibleIf(isPackageNameFieldHasErrorProperty)
                 .applyToComponent {
                     foreground = errorColor
                 }
@@ -111,7 +109,7 @@ class ModuleNamePanel(
                 .label(packageNameSectionLabel, LabelPosition.TOP)
                 .resizableColumn()
                 .align(Align.FILL)
-                .enabledIfCompat(isInEditModeObservable)
+                .enabledIf(isInEditModeObservable)
 
             val normalBorder = cell.component.border
             val errorBorder = BorderFactory.createLineBorder(errorColor, 1, true)
@@ -141,7 +139,7 @@ class ModuleNamePanel(
 
             val button = button(observableTitle.get()) {
                 isInEditModeProperty.set(!isInEditModeProperty.get())
-            }.enabledIfCompat(enabledObservable)
+            }.enabledIf(enabledObservable)
 
             observableTitle.afterChange { newTitle ->
                 button.component.text = newTitle
