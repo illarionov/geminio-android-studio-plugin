@@ -51,7 +51,7 @@ internal object GeminioExpressionUtils {
         return ModuleTemplateData(
             projectTemplateData = ProjectTemplateData(
                 androidXSupport = true,
-                agpVersion = AgpVersion(8,0),
+                agpVersion = AgpVersion(8, 0),
                 sdkDir = File("/AndroidSdk"),
                 language = Language.Kotlin,
                 kotlinVersion = "1.4.10",
