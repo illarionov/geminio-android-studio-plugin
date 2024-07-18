@@ -1,5 +1,28 @@
 # hh-android-plugins
 
+Форк плагинов для Android Studio [hh-android-plugins](https://github.com/hhru/android-multimodule-plugin) от hh.ru c
+некоторыми исправлениями и дополнениями, плюс сборки для альфа-версий Android Studio.
+
+### Установка
+
+Собранные плагины можно скачать с релизов на Github: [Releases](https://github.com/illarionov/geminio-android-studio-plugin/releases).
+
+Для плагина hh-geminio также создан свой репозиторий c плагинами.  
+Откройте в AS Plugins -> Manage Plugin Repositories, добавьте адрес https://plugins.pixnews.ru, перейдите 
+в Marketplace и там плагин можно будет найти и установить по имени "Geminio".
+
+### Основные изменения
+
+Основные отличия от оригинального плагина:
+
+* Сборка для стабильных и альфа-версий AS. Последняя: Android Studio Koala Feature Drop | 2024.1.2 Canary 1
+* В визарде добавлена галка, отключающая добавление include в *settings.gradle.kts* для сгенерированного плагина.
+* UI диалоги переписаны на Kotlin UI DSL Version 2. 
+    * Формы должны работать чуть более корректно. Например, в настройках работает кнопка Reset при модификации данных
+    в полях.
+
+## Оригинальный README
+
 Репозиторий с плагинами для Android Studio, разработанными в hh.ru .
 
 ### Список плагинов в репозитории
