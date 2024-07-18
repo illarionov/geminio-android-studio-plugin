@@ -2,15 +2,21 @@ package ru.hh.plugins.geminio.actions.module_template.steps
 
 import com.android.tools.idea.npw.model.RenderTemplateModel
 import com.android.tools.idea.wizard.model.ModelWizardStep
+import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.module.Module
+import com.intellij.openapi.observable.properties.AtomicLazyProperty
 import com.intellij.openapi.project.Project
 import com.intellij.ui.dsl.builder.Align
 import com.intellij.ui.dsl.builder.LabelPosition
+import com.intellij.ui.dsl.builder.TopGap
+import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.panel
 import ru.hh.plugins.extensions.SPACE
 import ru.hh.plugins.extensions.UNDERSCORE
 import ru.hh.plugins.extensions.layout.onTextChange
 import ru.hh.plugins.extensions.openapi.getAndroidApplicationsModules
+import ru.hh.plugins.geminio.GeminioConstants.DEFAULT_MODIFY_ROOT_SETTINGS_GRADLE_FILE
+import ru.hh.plugins.geminio.GeminioConstants.RecentsKeys.MODIFY_ROOT_SETTINGS_GRADLE_FILE
 import ru.hh.plugins.views.CheckBoxListView
 import javax.swing.JComponent
 
@@ -38,6 +44,21 @@ class ChooseModulesModelWizardStep(
     }
 
     private val selectedModulesItems = mutableListOf<ModuleDisplayableItem>()
+    private var _modifyRootSettingsFile = AtomicLazyProperty {
+        PropertiesComponent.getInstance().getBoolean(
+            MODIFY_ROOT_SETTINGS_GRADLE_FILE,
+            DEFAULT_MODIFY_ROOT_SETTINGS_GRADLE_FILE
+        )
+    }.apply {
+        afterChange(this@ChooseModulesModelWizardStep) {
+            PropertiesComponent.getInstance().setValue(
+                MODIFY_ROOT_SETTINGS_GRADLE_FILE,
+                it,
+                DEFAULT_MODIFY_ROOT_SETTINGS_GRADLE_FILE
+            )
+        }
+    }
+    val modifyRootSettingsFile: Boolean by _modifyRootSettingsFile
 
     override fun getComponent(): JComponent {
         return panel {
@@ -72,6 +93,10 @@ class ChooseModulesModelWizardStep(
                 button("Enable All") { enableAllItems() }
                 button("Disable All") { disableAllItems() }
             }
+            row {
+                checkBox("Add new module to root settings file")
+                    .bindSelected(_modifyRootSettingsFile)
+            }.topGap(TopGap.SMALL)
         }.also {
             updateListView(allModulesItems)
         }
