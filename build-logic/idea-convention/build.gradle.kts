@@ -12,5 +12,6 @@ dependencies {
 
     implementation(Libs.gradleIntelliJPlugin)
     implementation(Libs.gradleChangelogPlugin)
+    implementation(Libs.gradleIntelliJPluginUploader)
     implementation(Libs.kotlinPlugin)
 }
