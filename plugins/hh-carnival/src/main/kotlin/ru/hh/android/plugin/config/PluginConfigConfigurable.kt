@@ -18,7 +18,6 @@ import com.intellij.ui.dsl.builder.toNullableProperty
 import ru.hh.android.plugin.config.CarnivalSettingsFormState.ClearableCharArray
 import ru.hh.android.plugin.core.model.jira.JiraDevelopmentTeam
 import ru.hh.plugins.extensions.layout.listCellRenderer
-import ru.hh.plugins.extensions.layout.passwordFieldCompat
 import ru.hh.plugins.logger.HHLogger
 
 /**
@@ -90,7 +89,7 @@ class PluginConfigConfigurable(
                         .widthGroup(JIRA_CREDENTIALS_UI_GROUP)
                 }
                 row("Password:") {
-                    passwordFieldCompat()
+                    passwordField()
                         .bind(
                             { field -> ClearableCharArray(*field.password) },
                             { field, value -> field.text = value.toString() },
