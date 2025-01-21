@@ -29,7 +29,7 @@ fun Project.executeWithoutCodeStyle(action: () -> Unit) {
  * Application module - module with applied `com.android.application` gradle plugin.
  */
 fun Project.getAndroidApplicationsModules(): List<Module> {
-    return modules.filter { it.isAndroidAppModule() }
+    return modules.asList().filter { it.isAndroidAppModule() }
 }
 
 /**
@@ -38,7 +38,7 @@ fun Project.getAndroidApplicationsModules(): List<Module> {
  * Library module - module with applied `com.android.library` or `java-library` gradle plugins.
  */
 fun Project.getLibrariesModules(): List<Module> {
-    return modules.filter { it.isAndroidLibraryModule() }
+    return modules.asList().filter { it.isAndroidLibraryModule() }
 }
 
 fun Project.getRootModule(): Module {

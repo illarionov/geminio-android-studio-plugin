@@ -5,8 +5,7 @@ on:
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.1.3.1/android-studio-2024.1.3.1-linux.tar.gz
-  COMPILER_VERSION: 241.18034.62
+  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.3.1.2/android-studio-2024.3.1.2-linux.tar.gz
   GRADLE_OPTS: >-
     -Dorg.gradle.jvmargs="-Xmx2G -XX:MaxMetaspaceSize=1G -XX:+UseParallelGC -XX:NewRatio=1 -XX:SoftRefLRUPolicyMSPerMB=10"
     -Dorg.gradle.vfs.watch=false
@@ -32,9 +31,7 @@ jobs:
         run: |
           ./gradlew plugins:hh-geminio:buildPlugin \
             -Pkotlin.daemon.jvmargs="${{ env.KOTLIN_DAEMON_JVMARGS }}" \
-            -DandroidStudioPath="$(pwd)/android-studio" \
-            -DandroidStudioCompilerVersion="$COMPILER_VERSION" \
-            -DandroidStudioPluginsNames="org.jetbrains.android,org.jetbrains.kotlin,com.intellij.java,org.intellij.groovy,Git4Idea,org.intellij.intelliLang"
+            -DandroidStudioPath="$(pwd)/android-studio"
       - name: Publish plugins to S3 repo
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -42,6 +39,4 @@ jobs:
         run: |
           ./gradlew --no-configuration-cache plugins:hh-geminio:uploadPlugin \
             -Pkotlin.daemon.jvmargs="${{ env.KOTLIN_DAEMON_JVMARGS }}" \
-            -DandroidStudioPath="$(pwd)/android-studio" \
-            -DandroidStudioCompilerVersion="$COMPILER_VERSION" \
-            -DandroidStudioPluginsNames="org.jetbrains.android,org.jetbrains.kotlin,com.intellij.java,org.intellij.groovy,Git4Idea,org.intellij.intelliLang"
+            -DandroidStudioPath="$(pwd)/android-studio"
