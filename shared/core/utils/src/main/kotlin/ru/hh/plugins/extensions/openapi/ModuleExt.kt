@@ -1,6 +1,6 @@
 package ru.hh.plugins.extensions.openapi
 
-import com.android.tools.idea.projectsystem.getHolderModule
+import com.android.tools.idea.projectsystem.gradle.getHolderModule
 import com.android.tools.idea.util.androidFacet
 import com.intellij.openapi.module.Module
 import com.intellij.psi.PsiFile

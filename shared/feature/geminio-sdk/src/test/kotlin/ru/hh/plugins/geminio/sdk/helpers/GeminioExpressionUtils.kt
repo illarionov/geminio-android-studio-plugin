@@ -63,7 +63,6 @@ internal object GeminioExpressionUtils {
                 debugKeystoreSha1 = null,
                 overridePathCheck = false,
                 isNewProject = false,
-                additionalMavenRepos = emptyList(),
             ),
             srcDir = File("/Project/src/main/kotlin/com/example/mylibrary/"),
             resDir = File("/Project/src/main/res/"),
