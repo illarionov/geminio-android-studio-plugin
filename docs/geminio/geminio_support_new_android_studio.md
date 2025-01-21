@@ -38,13 +38,11 @@
 
    </details>
 
-4. Идём в корневой файл `gradle.properties` и локально меняем старую версию компилятора и путь к
-   локально установленной
+4. Идём в корневой файл `gradle.properties` и локально меняем путь к локально установленной
    Android Studio.
 
    ```properties
    systemProp.androidStudioPath=/Users/p.strelchenko/Applications/Android\ Studio\ Iguana\ 2023.2.1.app/Contents
-   systemProp.androidStudioCompilerVersion=232.10227.8
    ```
 
 5. Пытаемся запустить плагин `Geminio` через встроенную в проект конфигурацию `Geminio [RUN]`.
@@ -112,9 +110,8 @@
 
 2. Вернуть обратно значение `systemProp.androidStudioPath`, локальное изменение коммитить нельзя.
 
-3. Заменить `pluginSinceBuild` в `gradle.properties` нужных плагинов на новую версию по аналогии с
-   `systemProp.androidStudioCompilerVersion`
-
+3. Заменить `pluginSinceBuild` в `gradle.properties` нужных плагинов на новую версию
+   
 4. **Обновить URL для новой версии Android Studio**
 
    Обновляем значение `ANDROID_STUDIO_URL` в
