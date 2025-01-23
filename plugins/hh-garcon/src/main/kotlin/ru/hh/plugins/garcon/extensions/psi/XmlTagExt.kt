@@ -5,7 +5,7 @@ import com.android.tools.idea.util.androidFacet
 import com.intellij.psi.PsiClass
 import com.intellij.psi.xml.XmlTag
 import org.jetbrains.android.facet.findClassValidInXMLByName
-import org.jetbrains.kotlin.idea.util.module
+import org.jetbrains.kotlin.idea.base.util.module
 
 fun XmlTag.toPsiClass(): PsiClass? {
     return module?.androidFacet?.let { facet ->
