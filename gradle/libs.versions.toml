@@ -2,13 +2,15 @@
 java-version = "21"
 kotlin = "2.1.10"
 
-detekt = "1.23.7"
+detekt = "1.23.8"
 flexmark = "0.64.8"
-freemarker = "2.3.33"
+freemarker = "2.3.34"
+fugue = "2.6.1"
 intellig-platform-plugin = "2.3.0"
 intellij-changelog = "2.2.1"
 intellij-plugin-uploader = "1.3.5"
 junit4 = "4.13.2"
+jira = "4.0.0"
 kotest = "5.8.1"
 kotlinx-html = "0.11.0"
 
@@ -16,6 +18,8 @@ kotlinx-html = "0.11.0"
 flexmark = { module = "com.vladsch.flexmark:flexmark-all", version.ref = "flexmark" }
 freemarker = { module = "org.freemarker:freemarker", version.ref = "freemarker" }
 junit4 = { module = "junit:junit", version.ref = "junit4" }
+fugue = { module = "com.atlassian.fugue:fugue", version.ref = "fugue" }
+jira = { module = "com.atlassian.jira:jira-rest-java-client-core", version.ref = "jira" }
 kotest = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
 kotlin-html = { module = "org.jetbrains.kotlinx:kotlinx-html-jvm", version.ref = "kotlinx-html" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
