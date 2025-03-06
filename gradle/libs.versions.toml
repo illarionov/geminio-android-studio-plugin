@@ -11,7 +11,7 @@ intellij-changelog = "2.2.1"
 intellij-plugin-uploader = "1.3.5"
 junit4 = "4.13.2"
 jira = "4.0.0"
-kotest = "5.8.1"
+kotest = "5.9.1"
 kotlinx-html = "0.11.0"
 
 [libraries]
