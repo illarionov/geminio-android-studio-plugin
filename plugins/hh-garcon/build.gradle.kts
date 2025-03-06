@@ -17,5 +17,5 @@ dependencies {
     implementation(project(":shared:core:psi-utils"))
     implementation(project(":shared:core:logger"))
     implementation(project(":shared:core:notifications"))
-    implementation(Libs.freemarker)
+    implementation(libs.freemarker)
 }

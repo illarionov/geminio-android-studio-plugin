@@ -1,7 +1,5 @@
 rootProject.name = "build-logic"
 
-includeBuild("../libraries")
-
 include("kotlin-convention")
 include("testing-convention")
 include("static-analysis-convention")
@@ -22,5 +20,10 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
         gradlePluginPortal()
+    }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
     }
 }

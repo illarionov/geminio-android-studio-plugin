@@ -1,10 +1,14 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+import ru.hh.plugins.core_utils.libs
 import ru.hh.plugins.static_analysis.StaticAnalysisExtension
 
 plugins {
     id("io.gitlab.arturbosch.detekt")
-    id("convention.libraries")
+}
+
+val detectJvmTarget = provider {
+    project.libs.findVersion("java-version").get().toString()
 }
 
 fun Detekt.setupCommonDetektSettings() {
@@ -13,7 +17,7 @@ fun Detekt.setupCommonDetektSettings() {
     autoCorrect = false
     disableDefaultRuleSets = false
     buildUponDefaultConfig = false
-    jvmTarget = Libs.javaVersion.toString()
+    jvmTarget = detectJvmTarget.get()
 
     // Setup sources for run
     setSource(files(projectDir))
@@ -70,7 +74,7 @@ val detektProjectBaseline by tasks.register<DetektCreateBaselineTask>("detektPro
     buildUponDefaultConfig.set(true)
     ignoreFailures.set(true)
     parallel.set(true)
-    jvmTarget = Libs.javaVersion.toString()
+    jvmTarget = detectJvmTarget.get()
 
     // Configuration
     val staticAnalysisExtension = project.extensions.getByName<StaticAnalysisExtension>("staticAnalysis")
@@ -80,6 +84,6 @@ val detektProjectBaseline by tasks.register<DetektCreateBaselineTask>("detektPro
 }
 
 dependencies {
-    add("detekt", Libs.staticAnalysis.detektCli)
-    add("detektPlugins", Libs.staticAnalysis.detektFormatting)
+    add("detekt", project.libs.findLibrary("detekt-cli").get())
+    add("detektPlugins", project.libs.findLibrary("detekt-formatting").get())
 }

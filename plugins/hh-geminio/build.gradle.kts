@@ -36,7 +36,7 @@ dependencies {
     implementation(project(":shared:feature:geminio-sdk"))
 
     // Libraries
-    implementation(Libs.flexmark) // Markdown parser
+    implementation(libs.flexmark) // Markdown parser
 }
 
 tasks.named<UploadPluginTask>("uploadPlugin") {

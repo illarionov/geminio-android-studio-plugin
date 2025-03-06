@@ -1,13 +1,9 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import ru.hh.plugins.core_utils.libs
 
 plugins {
-    id("convention.libraries")
     id("convention.unit-testing")
-}
-
-dependencies {
-    add("implementation", Libs.kotlinStdlib)
 }
 
 /**
@@ -19,16 +15,30 @@ val compileAllTask: TaskProvider<Task> = tasks.register("compileAll") {
     dependsOn(tasks.withType<KotlinCompile>())
 }
 
-tasks.withType<JavaCompile> {
-    sourceCompatibility = Libs.javaVersion.toString()
-    targetCompatibility = Libs.javaVersion.toString()
-}
+val targetJavaVersion = provider { project.libs.findVersion("java-version").get().toString() }
 
 tasks.withType<KotlinCompile>().configureEach {
     compilerOptions {
-        jvmTarget = JvmTarget.fromTarget(Libs.javaVersion.toString())
+        jvmTarget = JvmTarget.fromTarget(targetJavaVersion.get())
         allWarningsAsErrors = false
         optIn.add("kotlin.RequiresOptIn")
         freeCompilerArgs.add("-Xjvm-default=all-compatibility")
     }
 }
+
+plugins.withType<JavaBasePlugin> {
+    afterEvaluate {
+        tasks.withType<JavaCompile> {
+            sourceCompatibility = targetJavaVersion.get()
+            targetCompatibility = targetJavaVersion.get()
+        }
+    }
+
+    dependencies {
+        add(
+            "implementation",
+            provider { project.libs.findLibrary("kotlin-stdlib").get().get() }
+        )
+    }
+}
+

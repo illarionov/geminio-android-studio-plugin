@@ -1,15 +1,13 @@
 plugins {
     `kotlin-dsl`
-    id("convention.libraries")
 }
 
 group = "ru.hh.plugins.gradle"
 
 dependencies {
-    implementation("ru.hh.plugins.build_logic:libraries")
-    implementation("ru.hh.plugins.build_logic:idea-convention")
-    implementation("ru.hh.plugins.gradle:core-utils")
-    implementation(Libs.gradleIntelliJPlugin)
+    implementation(project(":idea-convention"))
+    implementation(project(":gradle-ext:core-utils"))
+    implementation(libs.intellij.platform.plugin)
 }
 
 gradlePlugin {

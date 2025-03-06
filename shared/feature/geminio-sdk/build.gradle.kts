@@ -11,7 +11,7 @@ dependencies {
     implementation(project(":shared:core:logger"))
 
     // Libraries
-    implementation(Libs.freemarker)
+    implementation(libs.freemarker)
 
-    testImplementation(Libs.tests.kotest) // for kotest framework
+    testImplementation(libs.kotest) // for kotest framework
 }
