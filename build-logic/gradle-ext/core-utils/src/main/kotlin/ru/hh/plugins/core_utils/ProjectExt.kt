@@ -1,18 +1,10 @@
 package ru.hh.plugins.core_utils
 
 import org.gradle.api.Project
+import org.gradle.api.artifacts.VersionCatalog
+import org.gradle.api.artifacts.VersionCatalogsExtension
+import org.gradle.kotlin.dsl.getByType
 
 fun Project.isRoot() = project == project.rootProject
 
-fun Project.getMandatoryStringProperty(name: String): String {
-    return if (hasProperty(name)) {
-        val string = property(name)?.toString()
-        if (string.isNullOrBlank()) {
-            throw RuntimeException("Parameter: $name is blank but required")
-        } else {
-            string
-        }
-    } else {
-        throw RuntimeException("Parameter: $name is missing but required")
-    }
-}
+val Project.libs: VersionCatalog get() = extensions.getByType<VersionCatalogsExtension>().named("libs")

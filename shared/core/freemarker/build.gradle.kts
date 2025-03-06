@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    implementation(Libs.freemarker)
+    implementation(libs.freemarker)
 }

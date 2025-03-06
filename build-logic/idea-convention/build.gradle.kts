@@ -1,17 +1,16 @@
 plugins {
     `kotlin-dsl`
-    id("convention.libraries")
 }
 
 group = "ru.hh.plugins.build_logic"
 
 dependencies {
-    implementation("ru.hh.plugins.build_logic:libraries")
-    implementation("ru.hh.plugins.build_logic:testing-convention")
-    implementation("ru.hh.plugins.build_logic:kotlin-convention")
+    implementation(project(":testing-convention"))
+    implementation(project(":kotlin-convention"))
+    implementation(project(":gradle-ext:core-utils"))
 
-    implementation(Libs.gradleIntelliJPlugin)
-    implementation(Libs.gradleChangelogPlugin)
-    implementation(Libs.gradleIntelliJPluginUploader)
-    implementation(Libs.kotlinPlugin)
+    implementation(libs.intellij.changelog.plugin)
+    implementation(libs.intellij.platform.plugin)
+    implementation(libs.intellij.plugin.uploader)
+    implementation(libs.kotlin.plugin)
 }
