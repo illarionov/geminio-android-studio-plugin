@@ -7,7 +7,7 @@ on:
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2025.1.1.3/android-studio-2025.1.1.3-linux.tar.gz
+  ANDROID_STUDIO_URL: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2025.1.1.14/android-studio-2025.1.1.14-linux.tar.gz
 
 jobs:
   build:
