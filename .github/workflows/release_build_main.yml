@@ -12,7 +12,7 @@ on:
 
 env:
   # Link for Linux zip file from https://developer.android.com/studio/archive
-  ANDROID_STUDIO_URL: ${{ inputs.android_studio_url || 'https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2025.1.1.14/android-studio-2025.1.1.14-linux.tar.gz' }}
+  ANDROID_STUDIO_URL: ${{ inputs.android_studio_url || 'https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2025.1.2.8/android-studio-2025.1.2.8-linux.tar.gz' }}
   GRADLE_OPTS: >-
     -Dorg.gradle.jvmargs="-Xmx2G -XX:MaxMetaspaceSize=1G -XX:+UseParallelGC -XX:NewRatio=1 -XX:SoftRefLRUPolicyMSPerMB=10"
     -Dorg.gradle.vfs.watch=false
