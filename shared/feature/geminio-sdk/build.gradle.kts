@@ -13,5 +13,6 @@ dependencies {
     // Libraries
     implementation(libs.freemarker)
 
+    testImplementation(gradleApi())
     testImplementation(libs.kotest) // for kotest framework
 }

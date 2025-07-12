@@ -1,12 +1,13 @@
 package ru.hh.plugins.geminio.services.templates
 
+import com.android.sdklib.AndroidMajorVersion
+import com.android.sdklib.AndroidVersion
 import com.android.tools.idea.gradle.plugin.AgpVersions
 import com.android.tools.idea.npw.template.ModuleTemplateDataBuilder
 import com.android.tools.idea.npw.template.ProjectTemplateDataBuilder
 import com.android.tools.idea.templates.recipe.DefaultRecipeExecutor
 import com.android.tools.idea.templates.recipe.RenderingContext
 import com.android.tools.idea.wizard.template.ApiTemplateData
-import com.android.tools.idea.wizard.template.ApiVersion
 import com.android.tools.idea.wizard.template.BaseFeature
 import com.android.tools.idea.wizard.template.Category
 import com.android.tools.idea.wizard.template.FormFactor
@@ -31,6 +32,7 @@ class GeminioRecipeExecutorFactoryService(
         const val STUB_BASE_FEATURE_NAME = "$STUB_PREFIX.base_feature"
         const val STUB_APP_NAME = "$STUB_PREFIX.app_name"
         const val STUB_MAIN_THEME_DATA_NAME = "$STUB_PREFIX.main_theme_data"
+        const val STUB_ANDROID_VERSION = 24
         const val STUB_API_VERSION = 30
         const val STUB_API_VERSION_STRING = "30"
         const val STUB_COMMAND_RENDERING_CONTEXT = "$STUB_PREFIX.rendering_context_command"
@@ -111,9 +113,9 @@ class GeminioRecipeExecutorFactoryService(
                 main = ThemeData(STUB_MAIN_THEME_DATA_NAME, true)
             )
             builder.apis = ApiTemplateData(
-                buildApi = createStubApiVersion(),
-                targetApi = createStubApiVersion(),
-                minApi = createStubApiVersion(),
+                buildApi = AndroidVersion(STUB_ANDROID_VERSION, null),
+                targetApi = AndroidMajorVersion(STUB_API_VERSION, STUB_API_VERSION_STRING),
+                minApi = AndroidMajorVersion(STUB_API_VERSION, STUB_API_VERSION_STRING),
                 appCompatVersion = STUB_API_VERSION,
             )
             builder.category = Category.Other
@@ -133,10 +135,6 @@ class GeminioRecipeExecutorFactoryService(
 
             builder.setProjectDefaults(project)
         }
-
-    private fun createStubApiVersion(): ApiVersion {
-        return ApiVersion(STUB_API_VERSION, STUB_API_VERSION_STRING)
-    }
 
     private fun GeminioTemplateData.getModuleName(): String {
         return existingParametersMap[geminioIds.newModuleNameParameterId]!!.value as String

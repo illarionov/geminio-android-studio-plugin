@@ -1,8 +1,9 @@
 package ru.hh.plugins.geminio.sdk.helpers
 
 import com.android.ide.common.repository.AgpVersion
+import com.android.sdklib.AndroidMajorVersion
+import com.android.sdklib.AndroidVersion
 import com.android.tools.idea.wizard.template.ApiTemplateData
-import com.android.tools.idea.wizard.template.ApiVersion
 import com.android.tools.idea.wizard.template.Category
 import com.android.tools.idea.wizard.template.FormFactor
 import com.android.tools.idea.wizard.template.Language
@@ -13,6 +14,7 @@ import com.android.tools.idea.wizard.template.ViewBindingSupport
 import com.android.tools.idea.wizard.template.booleanParameter
 import com.android.tools.idea.wizard.template.stringParameter
 import com.intellij.mock.MockVirtualFile
+import org.gradle.util.GradleVersion
 import ru.hh.plugins.geminio.sdk.recipe.models.expressions.RecipeExpression
 import ru.hh.plugins.geminio.sdk.recipe.models.expressions.RecipeExpressionCommand
 import ru.hh.plugins.geminio.sdk.recipe.models.expressions.RecipeExpressionModifier
@@ -64,6 +66,7 @@ internal object GeminioExpressionUtils {
                 overridePathCheck = false,
                 isNewProject = false,
                 additionalMavenRepos = listOf(),
+                gradleVersion = GradleVersion.version("8.14")
             ),
             srcDir = File("/Project/src/main/kotlin/com/example/mylibrary/"),
             resDir = File("/Project/src/main/res/"),
@@ -82,9 +85,9 @@ internal object GeminioExpressionUtils {
             ),
             baseFeature = null,
             apis = ApiTemplateData(
-                buildApi = ApiVersion(29, "29"),
-                targetApi = ApiVersion(29, "29"),
-                minApi = ApiVersion(21, "21"),
+                buildApi = AndroidVersion(29, "29"),
+                targetApi = AndroidMajorVersion(29, "29"),
+                minApi = AndroidMajorVersion(21, "21"),
                 appCompatVersion = 21,
             ),
             viewBindingSupport = ViewBindingSupport.NOT_SUPPORTED,
