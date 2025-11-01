@@ -1,6 +1,6 @@
 [versions]
 java-version = "21"
-kotlin = "2.2.0"
+kotlin = "2.2.21"
 
 detekt = "1.23.8"
 flexmark = "0.64.8"
